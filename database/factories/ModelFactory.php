@@ -11,11 +11,38 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+/*$factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
+    ];
+});*/
+
+
+$factory->define(App\User::class, function ($faker) {
+    return [
+        'name' => $faker->name,
+        'last_name' => $faker->lastName,
+        'phone'  => $faker->phoneNumber,
+        'service'  => $faker->company,
+        'city'  => $faker->city,
+        'address' => $faker->address,
+        'position' => 'Владелец сервиса',
+        'email' => $faker->email,
+        'password' => bcrypt('asdasdA1'),
+        'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\Product::class, function ($faker) {
+    return [
+        'type' => 'oils',
+        'category' => 'CVL',
+        'brand'  => 'G-Family',
+        'title'  => $faker->company,
+        'description'  => str_random(50),
+        'price' => $faker->randomNumber(3),
     ];
 });
