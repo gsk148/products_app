@@ -31,3 +31,10 @@ Route::resource('product', 'ProductController', ['except' => 'index']);
 Route::get('products', 'ProductController@index');
 Route::resource('user', 'UserController', ['except' => 'index']);
 Route::get('users', 'UserController@index');
+
+
+Route::get('/users', [
+    'middleware' => ['auth', 'acl:admin_all'],
+    'as' => 'users.all',
+    'uses' => 'UserController@index'
+]);
