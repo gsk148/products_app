@@ -93,4 +93,9 @@ class UserController extends Controller
     {
         //
     }
+
+    public function feedback()
+    {
+        return view('user.feedback');
+    }
 }

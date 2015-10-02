@@ -94,6 +94,53 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect('products');
+    }
+
+
+    // Filters
+    public function oilFilter()
+    {
+        $products = Product::where('type', '=', 'Масла, смазки')->get();
+        return view('product.index', compact('products'));
+    }
+
+    public function liquidsFilter()
+    {
+        $products = Product::where('type', '=', 'Технические жидкости')->get();
+        return view('product.index', compact('products'));
+    }
+
+    public function PVLFilter()
+    {
+        $products = Product::where('category', '=', 'PVL')->get();
+        return view('product.index', compact('products'));
+    }
+
+    public function CVLFilter()
+    {
+        $products = Product::where('category', '=', 'CVL')->get();
+        return view('product.index', compact('products'));
+    }
+
+    public function INDFilter()
+    {
+        $products = Product::where('category', '=', 'IND')->get();
+        return view('product.index', compact('products'));
+    }
+
+    public function gFamilyFilter()
+    {
+        $products = Product::where('brand', '=', 'G-Family')->get();
+        return view('product.index', compact('products'));
+    }
+
+    public function gazpromneftFilter()
+    {
+        $products = Product::where('brand', '=', 'Газпромнефть')->get();
+        return view('product.index', compact('products'));
     }
 }

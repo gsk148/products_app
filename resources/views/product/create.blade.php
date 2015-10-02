@@ -6,16 +6,16 @@
     <div class="form-group">
         <label class="control-label">Тип:</label>
         <select name="type" id="type" class="form-control">
-            <option value="oils">Масла, смазки</option>
-            <option value="technical_liquids">Технические жидкости</option>
+            <option>Масла, смазки</option>
+            <option>Технические жидкости</option>
         </select>
     </div>
     <div class="form-group">
         <label class="control-label">Категория:</label>
         <select name="category" id="category" class="form-control">
-            <option value="PVL">PVL</option>
-            <option value="CVL">CVL</option>
-            <option value="IND">IND</option>
+            <option>PVL</option>
+            <option>CVL</option>
+            <option>IND</option>
         </select>
     </div>
     <div class="form-group">

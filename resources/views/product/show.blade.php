@@ -15,4 +15,12 @@
     <div class="well well-sm">{{ $product->description }}</div>
     <h3>Стоимость:</h3>
     <div class="well well-sm">{{ $product->price }} руб.</div>
+    @if(Auth::user()->canI('admin_all'))
+        <div>
+            <a href="/product/{{ $product->id }}/edit" class="btn btn-warning pull-left">Редактировать продукт</a>
+            {!!  Form::model($product, ['method' => 'DELETE', 'action' => ['ProductController@destroy',$product->id ]] )  !!}
+                {!! Form::submit('Удалить продукт', ['class' => 'btn btn-default pull-right']) !!}
+            {!! Form::close() !!}
+        </div>
+    @endif
 @stop

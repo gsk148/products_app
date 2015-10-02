@@ -38,11 +38,11 @@ $factory->define(App\User::class, function ($faker) {
 
 $factory->define(App\Product::class, function ($faker) {
     return [
-        'type' => 'oils',
-        'category' => 'CVL',
+        'type' => 'Масла, смазки',
+        'category' => 'IND',
         'brand'  => 'G-Family',
         'title'  => $faker->company,
-        'description'  => str_random(50),
+        'description'  => $faker->sentence(10),
         'price' => $faker->randomNumber(3),
     ];
 });

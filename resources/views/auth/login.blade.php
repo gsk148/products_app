@@ -22,4 +22,6 @@
         {!! Form::submit('Войти', ['class' => 'btn btn-primary']) !!}
     </div>
     {!! Form::close() !!}
+
+    @include('errors.list')
 @stop
